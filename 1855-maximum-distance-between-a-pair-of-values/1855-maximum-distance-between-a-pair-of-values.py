@@ -15,7 +15,7 @@ class Solution(object):
                 j += 1
             else:
                 i += 1
-                if j < i:
+                if i > j:
                     j = i
         
         return max_dist
