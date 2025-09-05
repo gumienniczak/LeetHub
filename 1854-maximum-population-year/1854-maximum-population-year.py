@@ -14,7 +14,6 @@ class Solution(object):
             events.append((d, -1))
         
         events.sort(key=lambda x: (x[0], x[1]))
-        print(events)
         for year, change in events:
             cur_pop += change
             if cur_pop > max_pop:
