@@ -15,8 +15,5 @@ class Solution(object):
                 else:
                     continue
         
-        if stack:
-            return False
-        
-        return True
+        return not stack
                    
