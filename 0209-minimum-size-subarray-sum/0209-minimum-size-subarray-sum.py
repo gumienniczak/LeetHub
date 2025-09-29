@@ -5,16 +5,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        left = curr = 0
-        ans = float('inf')
-
-        for right in range(len(nums)):
-            curr += nums[right]
-            while curr >= target:
+        left = 0
+        ans = float("inf")
+        cur_sum = 0
+        N = len(nums)
+        for right in range(N):
+            cur_sum += nums[right]
+            while cur_sum >= target:
                 ans = min(ans, right - left + 1)
-                curr -= nums[left]
+                cur_sum -= nums[left]
                 left += 1
-
-        if ans == float('inf'):
-            return 0
-        return ans
+            
+        return ans if ans != float("inf") else 0
