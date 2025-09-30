@@ -1,34 +1,27 @@
 from collections import defaultdict
-
 class Solution(object):
     def checkInclusion(self, s1, s2):
-        n1, n2 = len(s1), len(s2)
-        if n1 > n2:
-            return False
-
-        counter1 = defaultdict(int)
-        counter2 = defaultdict(int)
-
-        for ch in s1:
-            counter1[ch] += 1
-
-        for i in range(n1):
-            counter2[s2[i]] += 1
-
-        if counter1 == counter2:
-            return True
-
-        # Sliding window
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
+        s1_counter = defaultdict(int)
+        for char in s1:
+            s1_counter[char] += 1
+        
         left = 0
-        for right in range(n1, n2):
-            counter2[s2[right]] += 1
-            char_to_remove = s2[left]
-            counter2[char_to_remove] -= 1
-            if counter2[char_to_remove] == 0:
-                del counter2[char_to_remove]
-            left += 1
-
-            if counter1 == counter2:
+        cur_counter = defaultdict(int)
+        N1 = len(s1)
+        N2 = len(s2)
+        for right in range(N2):
+            cur_counter[s2[right]] += 1
+            while right - left + 1 > N1:
+                cur_counter[s2[left]] -= 1
+                if cur_counter[s2[left]] == 0:
+                    del cur_counter[s2[left]]
+                left += 1
+            if s1_counter == cur_counter:
                 return True
-
+        
         return False
