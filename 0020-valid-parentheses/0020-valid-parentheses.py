@@ -4,16 +4,14 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        mapping = {"(": ")", "[": "]", "{": "}"}
         stack = []
-        pars = {"(": ")", "{": "}", "[": "]"}
-        for char in s:
-            if char in pars:
-                stack.append(char)
+        for bracket in s:
+            if bracket in mapping:
+                stack.append(bracket)
             else:
-                if not stack or char != pars[stack.pop()]:
+                if not stack or mapping[stack.pop()] != bracket:
                     return False
                 else:
                     continue
-        
         return not stack
-                   
