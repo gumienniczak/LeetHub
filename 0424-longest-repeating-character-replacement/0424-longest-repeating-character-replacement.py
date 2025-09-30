@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Solution(object):
     def characterReplacement(self, s, k):
         """
@@ -8,12 +9,13 @@ class Solution(object):
         N = len(s)
         left = 0
         ans = 0
-        counter = [0] * 26
+        counter = defaultdict(int)
         for right in range(N):
-            counter[ord(s[right]) - 65] += 1
-            while right - left + 1 - max(counter) > k:
-                counter[ord(s[left]) - 65] -= 1
+            counter[s[right]] += 1
+            while right - left + 1 - max(counter.values()) > k:
+                counter[s[left]] -= 1
+                if counter[s[left]] == 0:
+                    del counter[s[left]]
                 left += 1
             ans = max(ans, right - left + 1)
-        
         return ans
