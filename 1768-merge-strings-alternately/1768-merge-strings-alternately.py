@@ -1,28 +1,33 @@
 class Solution(object):
     def mergeAlternately(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: str
-        """
-        N1 = len(word1)
-        N2 = len(word2)
-
-        def alternate(str1, str2):
-            output = ""
-            for a, b in zip(str1, str2):
-                output += a
-                output += b
-            return output
-
-        if N1 != N2:
-            if N1 > N2:
-                output = alternate(word1[:N2], word2)
-                output += word1[N2:]
+        A, B = len(word1), len(word2)
+        a, b = 0, 0
+        s = []
+ 
+        word = 1
+        while a < A and b < B:
+            if word == 1:
+                s.append(word1[a])
+                a += 1
+                word = 2
             else:
-                output = alternate(word1, word2[:N1])
-                output += word2[N1:]
-        else:
-            output = alternate(word1, word2)
+                s.append(word2[b])
+                b += 1
+                word = 1
         
-        return output
+        while a < A:
+            s.append(word1[a])
+            a += 1
+        
+        while b < B:
+            s.append(word2[b])
+            b += 1
+        
+        return ''.join(s)
+        # Let A be the length of Word1
+        # Let B be the length of Word2
+        # Let T = A + B
+        
+        # Time: O(T)
+        # Space: O(T)
+        
