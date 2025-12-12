@@ -9,9 +9,7 @@ class Solution(object):
         users_online = [1] * numberOfUsers
         timestamps = [0] * numberOfUsers
 
-        events.sort(key = lambda x: x[0], reverse=True)
-        events.sort(key = lambda x: int(x[1]))
-    
+        events.sort(key=lambda x: (int(x[1]), 0 if x[0] == 'OFFLINE' else 1))
 
         for event in events:
             tp = event[0] 
