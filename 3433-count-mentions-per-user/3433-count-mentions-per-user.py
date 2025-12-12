@@ -20,7 +20,7 @@ class Solution(object):
                 users_online[int(who)] = 0
             
             for idx in range(numberOfUsers):
-                if timestamps[idx] + 60 <= ts:
+                if timestamps[idx] and timestamps[idx] + 60 <= ts:
                     users_online[idx] = 1
             
             if tp == 'MESSAGE':
