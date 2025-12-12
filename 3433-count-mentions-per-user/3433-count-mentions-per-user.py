@@ -9,6 +9,7 @@ class Solution(object):
         users_online = [1] * numberOfUsers
         users_offline = set()
         timestamps = [0] * numberOfUsers
+        to_remove = []
 
         events.sort(key=lambda x: (int(x[1]), 0 if x[0] == 'OFFLINE' else 1))
 
@@ -24,6 +25,11 @@ class Solution(object):
             for idx in users_offline:
                 if timestamps[idx] + 60 <= ts:
                     users_online[idx] = 1
+                    to_remove.append(idx)
+            
+            for idx in to_remove:
+                users_offline.remove(idx)
+            to_remove = []
             
             if tp == 'MESSAGE':
                 if who == 'ALL':
