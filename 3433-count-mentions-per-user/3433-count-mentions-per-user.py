@@ -7,6 +7,7 @@ class Solution(object):
         """
         mentions = [0] * numberOfUsers
         users_online = [1] * numberOfUsers
+        users_offline = set()
         timestamps = [0] * numberOfUsers
 
         events.sort(key=lambda x: (int(x[1]), 0 if x[0] == 'OFFLINE' else 1))
@@ -18,9 +19,10 @@ class Solution(object):
             if tp == 'OFFLINE':
                 timestamps[int(who)] = ts
                 users_online[int(who)] = 0
+                users_offline.add(int(who))
             
-            for idx in range(numberOfUsers):
-                if timestamps[idx] and timestamps[idx] + 60 <= ts:
+            for idx in users_offline:
+                if timestamps[idx] + 60 <= ts:
                     users_online[idx] = 1
             
             if tp == 'MESSAGE':
