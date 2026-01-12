@@ -4,20 +4,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        N = len(nums)
-        l_prod = 1
-        r_prod = 1
-        
-        l_arr = [0] * N
-        r_arr = [0] * N
+        n = len(nums)
+        ans = [0] * n
+        left_prod = [0] * n
+        right_prod = [0] * n
+        l_mult = 1
+        r_mult = 1
 
-        for i in range(N):
+        for i in range(n):
             j = -i - 1
-            l_arr[i] = l_prod
-            r_arr[j] = r_prod
-
-            l_prod *= nums[i]
-            r_prod *= nums[j]
+            left_prod[i] = l_mult
+            right_prod[j] = r_mult
+            l_mult *= nums[i]
+            r_mult *= nums[j]
         
-        return [l*r for l, r in zip(l_arr, r_arr)]
-
+        return [left * right for left, right in zip(left_prod, right_prod)]
+        
