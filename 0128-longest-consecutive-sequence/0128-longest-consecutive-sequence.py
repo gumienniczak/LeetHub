@@ -4,17 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        chars = set(nums)
-
-        output = 0
-
-        for num in chars:
-            if num - 1 not in chars:
-                next_num = num + 1
-                length = 1
-                while next_num in chars:
-                    length += 1
-                    next_num += 1
-                output = max(output, length)
+        ans = 0
+        num_set = set(nums)
+        for num in num_set:
+            if num - 1 not in num_set:
+                longest = 1
+                cur_num = num
+                while cur_num + 1 in num_set:
+                    cur_num += 1
+                    longest += 1
+                ans = max(ans, longest)
+            else:
+                continue
         
-        return output
+        return ans
+
