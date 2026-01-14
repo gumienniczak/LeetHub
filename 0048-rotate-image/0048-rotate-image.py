@@ -1,14 +1,15 @@
-class Solution:
-    def rotate(self, matrix: List[List[int]]) -> None:
+class Solution(object):
+    def rotate(self, matrix):
         """
-        Do not return anything, modify matrix in-place instead.
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
         """
-        original = [row[:] for row in matrix]
-        max_counter = len(matrix) - 1
-        for r in range(len(matrix)):
-            for c in range(len(matrix)):
-                min_counter = c
-                matrix[min_counter][max_counter] = original[r][c]
-            max_counter -= 1
+        n = len(matrix)
 
-                
+        for i in range(n):
+            for j in range(i+1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+        for i in range(n):
+            for j in range(n // 2):
+                matrix[i][j], matrix[i][n - j - 1] = matrix[i][n - j - 1], matrix[i][j]
