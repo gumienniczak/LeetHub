@@ -4,19 +4,19 @@ class Solution:
 
         def generate(cur, left_count, right_count):
             if len(cur) == 2 * n:
-                ans.append("".join(cur))
+                ans.append(cur)
                 return
             if left_count < n:
-                cur.append('(')
+                cur += "("
                 generate(cur, left_count+1, right_count)
-                cur.pop()
+                cur = cur[:-1]
             
             if right_count < left_count:
-                cur.append(')')
+                cur += ")"
                 generate(cur, left_count, right_count+1)
-                cur.pop()
+                cur = cur[:-1]
             
-        generate([], 0, 0)
+        generate("", 0, 0)
         return ans
             
             
