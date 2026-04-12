@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0039-combination-sum](https://github.com/gumienniczak/LeetHub/tree/main/0039-combination-sum/) | Medium |
 | [0198-house-robber](https://github.com/gumienniczak/LeetHub/tree/main/0198-house-robber/) | Medium |
 ## Dynamic Programming
 | Problem Name | Difficulty |
@@ -22,6 +23,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/gumienniczak/LeetHub/tree/main/0017-letter-combinations-of-a-phone-number/) | Medium |
 | [0022-generate-parentheses](https://github.com/gumienniczak/LeetHub/tree/main/0022-generate-parentheses/) | Medium |
+| [0039-combination-sum](https://github.com/gumienniczak/LeetHub/tree/main/0039-combination-sum/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
