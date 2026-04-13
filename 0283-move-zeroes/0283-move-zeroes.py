@@ -9,11 +9,9 @@ class Solution:
             if nums[i] == 0:
                 counter += 1
             else:
-                nums[i - counter] = nums[i]
+                nums[i - counter], nums[i] = nums[i], nums[i - counter]
         
-        for i in range(1, counter + 1):
-            nums[-i] = 0
-        
+    
 
         
                 
