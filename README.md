@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [0039-combination-sum](https://github.com/gumienniczak/LeetHub/tree/main/0039-combination-sum/) | Medium |
 | [0198-house-robber](https://github.com/gumienniczak/LeetHub/tree/main/0198-house-robber/) | Medium |
+| [0283-move-zeroes](https://github.com/gumienniczak/LeetHub/tree/main/0283-move-zeroes/) | Easy |
 ## Dynamic Programming
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -28,4 +29,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/gumienniczak/LeetHub/tree/main/0017-letter-combinations-of-a-phone-number/) | Medium |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0283-move-zeroes](https://github.com/gumienniczak/LeetHub/tree/main/0283-move-zeroes/) | Easy |
 <!---LeetCode Topics End-->
