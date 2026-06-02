@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0039-combination-sum](https://github.com/gumienniczak/LeetHub/tree/main/0039-combination-sum/) | Medium |
 | [0198-house-robber](https://github.com/gumienniczak/LeetHub/tree/main/0198-house-robber/) | Medium |
 | [0283-move-zeroes](https://github.com/gumienniczak/LeetHub/tree/main/0283-move-zeroes/) | Easy |
+| [0704-binary-search](https://github.com/gumienniczak/LeetHub/tree/main/0704-binary-search/) | Easy |
 ## Dynamic Programming
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -33,4 +34,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0283-move-zeroes](https://github.com/gumienniczak/LeetHub/tree/main/0283-move-zeroes/) | Easy |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0704-binary-search](https://github.com/gumienniczak/LeetHub/tree/main/0704-binary-search/) | Easy |
 <!---LeetCode Topics End-->
